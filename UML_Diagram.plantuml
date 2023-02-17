@@ -1,0 +1,47 @@
+@startuml
+title LoMap APP UML Diagram
+actor User 
+actor Group
+actor Places
+
+participant "LoMap App" as LMA 
+participant "Personal Pod" as PP 
+participant "Centralized Database" as CDB 
+
+User -> LMA : Create Personal Map 
+LMA -> PP : Store Information 
+LMA -> CDB : Store Performance-Related Information 
+
+Group -> LMA : Create Personal Map 
+Places-> LMA: Create Place Maps and Pods
+LMA -> PP : Store Information
+
+User -> LMA : View Places \n and Information 
+LMA -> PP : Retrieve Information
+
+User -> LMA : Add Reviews, \n Comments, Pictures, etc. 
+LMA -> PP : Store Information 
+
+User -> LMA : View Maps with Filters 
+LMA -> PP : Retrieve Information 
+
+User -> LMA : Create Routes 
+LMA -> PP : Store Information 
+
+User -> LMA : Compare Maps 
+LMA -> PP : Retrieve Information 
+
+User -> LMA : Connect to Address Book 
+LMA -> PP : Store Information 
+
+User -> LMA : Create Place Recommendations 
+LMA -> PP : Store Information 
+
+User -> LMA : Create Maps with \n Recommended Places 
+LMA -> PP : Store Information 
+
+LMA -> LMA : Gamification Features 
+User -> LMA: Play Games
+LMA -> PP : Store Information 
+
+@endumml

@@ -1,0 +1,77 @@
+@startuml
+
+title LoMap APP Use Case Diagram
+
+actor User
+actor Group
+actor Place
+participant "LoMap APP" as App
+
+alt login
+User -> App: Login
+end
+
+alt Map
+User -> App: Create Maps
+User -> App: Add Places 
+User -> App: View Places
+User -> App: Edit Places 
+User -> App: Delete Places
+User -> App: Share Places
+User -> App: Compare Maps
+
+
+Group -> App: Create Maps
+Group -> App: Compare Maps 
+
+Place -> App: Create Maps
+Place -> App: Compare Maps 
+end
+
+alt Review
+User -> App: Add Reviews
+User -> App: View Reviews 
+User -> App: Edit Reviews 
+User ->App: Delete Reviews
+end
+
+alt Pictures
+User -> App: Add Pictures 
+User -> App: View Pictures 
+User -> App: Edit Pictures 
+User -> App: Delete Pictures
+end
+
+alt Route
+User -> App: Create Routes 
+User -> App: View Routes 
+User -> App: Edit Routes 
+User -> App: Delete Routes
+
+Group -> App: Create Routes
+Group -> App: View Routes 
+Group -> App: Edit Routes 
+Group ->App: Delete Routes
+
+Place -> App: Create Routes 
+Place -> App: View Routes 
+Place -> App: Edit Routes 
+Place -> App: Delete Routes
+end
+
+
+alt others
+User -> App: Connect to Address Book 
+User -> App: Create Place Recommendations 
+User -> App: Create Newsfeed
+App -> User: Create Newsfeed 
+App -> User: Add Gamification Features
+User -> App: Play Games
+end 
+ 
+alt Logout
+User -> App: Logout
+end
+
+
+@enduml
